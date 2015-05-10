@@ -11,8 +11,10 @@
       <root url="jar://$PROJECT_DIR$/lib/jdom-1.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jdt-compiler-3.1.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-3.0.17-ga-bin.jar!/" />
+      <root url="file://$PROJECT_DIR$/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
   </library>
 </component>
