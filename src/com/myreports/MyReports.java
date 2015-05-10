@@ -1,5 +1,6 @@
 package com.myreports;
 
+import java.awt.*;
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -59,7 +60,7 @@ public class MyReports {
 			JasperExportManager.exportReportToPdfFile(jasperPrint,
 					pdfDestination);
 
-//			 openPdfReport(pdfDestination);
+			 openPdfReport(pdfDestination);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -67,15 +68,25 @@ public class MyReports {
 		return fileName;
 	}
 
-	public void openPdfReport(String fileName) {
+	public void openPdfReport(String file) {
 	
 	try {
-		String file = "out/production/Reporting"+ fileName;
 		 System.out.println(file);
 		if ((new File(file)).exists()) {
- 
+
+			if(OSDetector.isWindows()) {
+
+				//Windows
 			Process p = Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler "+ file);
-			p.waitFor();
+				p.waitFor();
+			} else if (OSDetector.isLinux() || OSDetector.isMac()) {
+
+				Process p = Runtime.getRuntime().exec(new String[]{"/usr/bin/open",
+						file});
+				p.waitFor();
+			}  else if (Desktop.isDesktopSupported()) {
+				Desktop.getDesktop().open(new File(file));
+			}
  
 		} else {
  
