@@ -6,8 +6,18 @@ the xml with the model and create pdf.
 
 Used Java File IO to create a unique file everytime the program is run.
 
-Next steps are to refactor the code. 
+-- Next steps are to refactor the code. 
 
-Convert this into a web application. Use java servlet and render the pdf in browser instead of creating a pdf file. 
-If the browser doesn't support pdf format then the file will get download but, it won't get created on the server side.
+-- Convert this into a web application. Use java servlet and render the pdf in browser instead of creating a pdf file. 
+--If the browser doesn't support pdf format then the file will get download but, it won't get created on the server side.
+
+-- Make the pdf secure with username and password
+
+-- Create excel and word
+
+-- make the report dynamic by injecting the sql
+
+-- make the report columns dynamic by creating the report.xml on the fly
+
+
 
