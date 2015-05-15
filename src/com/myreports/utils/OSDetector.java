@@ -1,4 +1,4 @@
-package com.myreports;
+package com.myreports.utils;
 
 public class OSDetector
 {
